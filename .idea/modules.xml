@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Meme_Generator.iml" filepath="$PROJECT_DIR$/.idea/Meme_Generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PycharmProjects/StartingBack2019/.idea/StartingBack2019.iml" filepath="$PROJECT_DIR$/../PycharmProjects/StartingBack2019/.idea/StartingBack2019.iml" />
+    </modules>
+  </component>
+</project>
