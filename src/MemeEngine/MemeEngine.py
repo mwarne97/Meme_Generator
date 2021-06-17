@@ -15,7 +15,7 @@ class MemeEngine:
             new_img = img.resize((width, height))
 
             draw = ImageDraw.Draw(new_img)
-            font = ImageFont.truetype("./Meme_Generator/src/fonts/NotoSans/NotoSans-Bold.ttf")
+            font = ImageFont.truetype("./src/fonts/NotoSans/NotoSans-Bold.ttf")
             draw.text((10, 30), text + " " + author, font=font, fill="white")
             new_img.save(img_path)
             return img_path

@@ -77,7 +77,7 @@ def meme_post():
     author = request.form['author']
 
     req = requests.get(image_url, allow_redirects=True)
-    tmp_file = f'./Meme_Generator/src/{random.randint(0, 10000)}.png'
+    tmp_file = f'./src/{random.randint(0, 10000)}.png'
     open(tmp_file, "wb").write(req.content)
     path = meme.make_meme(tmp_file, body, author)
     os.remove(tmp_file)
