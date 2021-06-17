@@ -18,8 +18,8 @@ class IngestPDF(IngestorInterface):
         except Exception:
             raise Exception("Cannot Ingest Exception")
 
-        tmp_file = f'C:/Users/User/Meme_Generator/src/{random.randint(0,10000)}.txt'
-        program = "C:/Users/User/Meme_Generator/src/xpdf-tools-win-4.03/bin64/pdftotext.exe"
+        tmp_file = f'./Meme_Generator/src/{random.randint(0,10000)}.txt'
+        program = "./Meme_Generator/src/xpdf-tools-win-4.03/bin64/pdftotext.exe"
         subprocess.call([program, path, tmp_file])
 
         data_file = open(tmp_file, 'r')
