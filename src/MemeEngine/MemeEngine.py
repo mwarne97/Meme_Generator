@@ -2,13 +2,23 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 class MemeEngine:
-    """"""
+    """A MemeEngine.
+
+    It comprises an output path for the generated meme."""
+
     def __init__(self, output_dir: str):
-        """"""
+        """Create a new 'MemeEngine'.
+
+        Arguments:
+            output_dir {str} -- path to which generated memes will be stored."""
         self._output_dir = output_dir
 
     def make_meme(self, img_path, text, author, width=500) -> str:
-        """"""
+        """Create a meme.
+
+        meme.make_meme(img_path, "It was a good dat today", "Michael").
+        """
+
         with Image.open(img_path) as img:
             ratio = width / float(img.size[0])
             height = int(ratio * float(img.size[1]))

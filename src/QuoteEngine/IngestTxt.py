@@ -1,15 +1,23 @@
+"""IngestTxt is an Ingestor."""
 from .IngestorInterface import IngestorInterface
 from .models import QuoteModel
 from typing import List
 
 
 class IngestTxt(IngestorInterface):
-    """"""
+    """An Ingestor for parsing Text files.
+
+    IngestTxt determines if the file has the extension '.txt' before parsing.
+    """
     allowed_extensions = ['txt']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """"""
+        """Determine if file (path) is a text file for parsing.
+
+        Arguments:
+            path {str} -- path of file to be parsed.
+        """
         try:
             cls.can_ingest(path)
         except Exception:

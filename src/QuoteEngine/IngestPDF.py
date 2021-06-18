@@ -1,3 +1,4 @@
+"""IngestPDF is an Ingestor."""
 from .IngestorInterface import IngestorInterface
 from .models import QuoteModel
 from typing import List
@@ -7,12 +8,20 @@ import os
 
 
 class IngestPDF(IngestorInterface):
-    """"""
+    """An Ingestor for parsing PDF files.
+
+    IngestPDF determines if the file has the extension '.pdf' before parsing.
+    """
     allowed_extensions = ['pdf']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """"""
+        """Determine if file (path) is a PDF for parsing.
+
+        Arguments:
+            path {str} -- path of file to be parsed.
+        """
+
         try:
             cls.can_ingest(path)
         except Exception:

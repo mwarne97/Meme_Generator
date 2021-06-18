@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Meme_Generator.iml" filepath="$PROJECT_DIR$/.idea/Meme_Generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/../PycharmProjects/StartingBack2019/.idea/StartingBack2019.iml" filepath="$PROJECT_DIR$/../PycharmProjects/StartingBack2019/.idea/StartingBack2019.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../nd303-c1-advanced-python-techniques-project-starter/.idea/nd303-c1-advanced-python-techniques-project-starter.iml" filepath="$PROJECT_DIR$/../nd303-c1-advanced-python-techniques-project-starter/.idea/nd303-c1-advanced-python-techniques-project-starter.iml" />
     </modules>
   </component>
 </project>
