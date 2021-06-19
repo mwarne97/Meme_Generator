@@ -1,3 +1,5 @@
+from random import randint
+
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -27,5 +29,6 @@ class MemeEngine:
             draw = ImageDraw.Draw(new_img)
             font = ImageFont.truetype("./fonts/NotoSans/NotoSans-Bold.ttf")
             draw.text((10, 30), text + " " + author, font=font, fill="white")
-            new_img.save(img_path)
-            return img_path
+            out_path = f"./_data/photos/memes/{randint(0, 10000)}.jpg"
+            new_img.save(out_path)
+            return out_path
