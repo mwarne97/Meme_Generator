@@ -3,6 +3,7 @@ from .IngestorInterface import IngestorInterface
 from .models import QuoteModel
 from typing import List
 import pandas
+from Exceptions.Exceptions import InvalidFileExtension
 
 
 class IngestCSV(IngestorInterface):
@@ -15,16 +16,11 @@ class IngestCSV(IngestorInterface):
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Determine if file (path) is a CSV for parsing.
-
-        Arguments:
-            path {str} -- path of file to be parsed.
-        """
-
+        """Determine if file (path) is a CSV for parsing."""
         try:
             cls.can_ingest(path)
-        except Exception:
-            raise Exception("Cannot Ingest Exception")
+        except InvalidFileExtension:
+            raise InvalidFileExtension(f"Cannot Ingest This File: {path}")
 
         quotes = []
         data = pandas.read_csv(path, header=0)

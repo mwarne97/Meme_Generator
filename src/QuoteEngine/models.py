@@ -1,3 +1,6 @@
+"""QuoteModel defines the structure of a meme's quote."""
+
+
 class QuoteModel:
     """A quote model.
 
@@ -5,12 +8,7 @@ class QuoteModel:
     """
 
     def __init__(self, body: str, author: str):
-        """Create a new 'QuoteModel'.
-
-        Arguments:
-            body {str} -- the body of text for the quote.
-            author {str} -- the name of the person who said the quote.
-        """
+        """Create a new 'QuoteModel'."""
         self.body = body
         self.author = author
 
@@ -19,5 +17,5 @@ class QuoteModel:
         return self.body + " - " + self.author
 
     def __repr__(self):
-        """Return 'repr(self)', a computer-readable string representation of this object"""
+        """Return 'repr(self)', a computer-readable string representation of this object."""
         return f"QuoteModel(body={self.body!r}, author={self.author})"

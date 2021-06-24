@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="StartingBack2019" />
+    <orderEntry type="module" module-name="nd303-c1-advanced-python-techniques-project-starter" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

@@ -2,6 +2,7 @@
 from .IngestorInterface import IngestorInterface
 from .models import QuoteModel
 from typing import List
+from Exceptions.Exceptions import InvalidFileExtension
 
 
 class IngestTxt(IngestorInterface):
@@ -9,19 +10,16 @@ class IngestTxt(IngestorInterface):
 
     IngestTxt determines if the file has the extension '.txt' before parsing.
     """
+
     allowed_extensions = ['txt']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Determine if file (path) is a text file for parsing.
-
-        Arguments:
-            path {str} -- path of file to be parsed.
-        """
+        """Determine if file (path) is a text file for parsing."""
         try:
             cls.can_ingest(path)
-        except Exception:
-            raise Exception("Cannot Ingest Exception")
+        except InvalidFileExtension:
+            raise InvalidFileExtension(f"Cannot Ingest This File: {path}")
 
         data_file = open(path, 'r')
         quotes = []

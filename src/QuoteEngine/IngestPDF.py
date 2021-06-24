@@ -5,6 +5,7 @@ from typing import List
 import random
 import subprocess
 import os
+from Exceptions.Exceptions import InvalidFileExtension
 
 
 class IngestPDF(IngestorInterface):
@@ -12,22 +13,18 @@ class IngestPDF(IngestorInterface):
 
     IngestPDF determines if the file has the extension '.pdf' before parsing.
     """
+
     allowed_extensions = ['pdf']
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Determine if file (path) is a PDF for parsing.
-
-        Arguments:
-            path {str} -- path of file to be parsed.
-        """
-
+        """Determine if file (path) is a PDF for parsing."""
         try:
             cls.can_ingest(path)
-        except Exception:
-            raise Exception("Cannot Ingest Exception")
+        except InvalidFileExtension:
+            raise InvalidFileExtension(f"Cannot Ingest This File: {path}")
 
-        tmp_file = f'./{random.randint(0,10000)}.txt'
+        tmp_file = f'./{random.randint(0, 10000)}.txt'
         program = "./xpdf-tools-win-4.03/bin64/pdftotext.exe"
         subprocess.call([program, path, tmp_file])
 

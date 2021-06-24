@@ -1,4 +1,4 @@
-"""Ingestor stores different types of Ingestors for parsing files"""
+"""Ingestor stores different types of Ingestors for parsing files."""
 from typing import List
 from .IngestorInterface import IngestorInterface
 from .models import QuoteModel
@@ -9,17 +9,13 @@ from .IngestTxt import IngestTxt
 
 
 class Ingestor(IngestorInterface):
-    """
-
-    comprises a list of different ingestors for reading different file formats.
-    """
+    """Comprises a list of different ingestors for reading different file formats."""
 
     ingestors = [IngestDocx, IngestCSV, IngestPDF, IngestTxt]
 
     @classmethod
     def parse(cls, path: str) -> List[QuoteModel]:
-        """Determine which ingestor can parse the given file (path)"""
-
+        """Determine which ingestor can parse the given file (path)."""
         for ingestor in cls.ingestors:
             if ingestor.can_ingest(path):
                 return ingestor.parse(path)
